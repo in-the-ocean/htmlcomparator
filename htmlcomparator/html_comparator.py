@@ -146,7 +146,7 @@ class HTMLComparator:
     def __init__(self):
         self.diff = Difference()
 
-    def compare(self, o1, o2, compare_type = "all", quick_compare = True):
+    def compare(self, o1, o2, quick_compare = True, compare_type = "all"):
         if type(o1) == str and type(o2) == str:
             c1 = o1
             c2 = o2 
@@ -227,7 +227,12 @@ class ParsingError(Exception):
 
 
 if __name__ == "__main__":
-    s1 = '<p style="color:red"> test </p>'
-    s2 = '<p title="test difference"> test </p>'
+    # s1 = '<p style="color:red"> test </p>'
+    # s2 = '<p title="test difference"> test </p>'
+    # comparator = HTMLComparator()
+    # print(comparator.compare(s1,s2, compare_type = "all", quick_compare = False))
+
+    s1 = "<!DOCTYPE xml> <head> <p> Test </p> <p> different here </p> </head>"
+    s2 = "<!DOCTYPE html> <head> <p> test </p> </head>"
     comparator = HTMLComparator()
     print(comparator.compare(s1,s2, compare_type = "all", quick_compare = False))

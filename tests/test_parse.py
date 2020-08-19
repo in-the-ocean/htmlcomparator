@@ -143,10 +143,10 @@ class TestData(unittest.TestCase):
 class TestAdvanced(unittest.TestCase):
     def test_mixed_diff(self):
         s1 = "<!DOCTYPE xml> <head> <p> Test </p> <p> different here </p> </head>"
-        s2 = "<!DOCTYPE html> <head> <p> Test </p> </head>"
+        s2 = "<!DOCTYPE html> <head> <p> test </p> </head>"
         comparator = HTMLComparator()
         self.assertEqual(comparator.compare(s1,s2, compare_type = "all", quick_compare = False),
-                        "@@ DOCTYPE Difference @@\n*DOCTYPE xml\n-DOCTYPE html\n\nextra tag <p> in the first html at (1, 36)\n\n")
+                        "@@ DOCTYPE Difference @@\n*DOCTYPE xml\n-DOCTYPE html\n\nextra tag <p> in the first html at (1, 36)\n\n@@ (1, 25) , (1, 26) @@\n*Test\n-test\n\n")
     
     def test_extra_data(self):
         s1 = "<p> </p>"
@@ -154,6 +154,13 @@ class TestAdvanced(unittest.TestCase):
         comparator = HTMLComparator()
         self.assertEqual(comparator.compare(s1,s2, compare_type = "data", quick_compare = False),
                         "@@ None , (1, 3) @@\n*\n-extra\n\n")
+
+    def test_no_attr(self):
+        s1 = '<head style="lalala"> <p> Test </p> <p> different here </p> </head>'
+        s2 = '<head style="papapa"> <p> test </p> </head>'
+        comparator = HTMLComparator()
+        self.assertEqual(comparator.compare(s1, s2, compare_type = "data", quick_compare = False),
+                        "extra tag <p> in the first html at (1, 36)\n\n@@ (1, 25) , (1, 25) @@\n*Test\n-test\n\n")
 
 if __name__ == "__main__":
     unittest.main()
