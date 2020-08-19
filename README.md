@@ -1,5 +1,7 @@
 # htmlcomparator
 
+This is a light-weight tool used to compare two html files and return the differences. The user can choose the types of differences they want to receive. 
+
 ## Usage
 
 To start using the comparator, first import the package, and make an object.
@@ -10,7 +12,7 @@ comparator = HTMLComparator()
 ```
 The method that is used to compare html code is 
 ```python
-HTMLComparator.compare(html1, html2, quick_compare = True, compare_type = "all")
+comparator.compare(html1, html2, quick_compare = True, compare_type = "all")
 ```
 
 ```html1, html2``` are the two html to be compared. If they are both strings, it will treat them as two html strings. If they are both ```io.IOBase``` objects, then the program will treat them as two opened files. Otherwise the program will raise a ```TypeError```.
