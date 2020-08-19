@@ -1,6 +1,8 @@
 # htmlcomparator
 
-This is a light-weight tool used to compare two html files and return the differences. The user can choose the types of differences they want to receive. 
+This is a light-weight python package used to compare two html files and return the differences. 
+
+The users can choose whether they want a boolean result or string result that specify the difference. They can also choose the types of differences they want to receive. 
 
 ## Usage
 
