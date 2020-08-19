@@ -44,7 +44,7 @@ The tuples ```(1, 36)```, ```(1, 25)```, and ```(1, 25)``` give the line number 
 
 Currently doesn't support CSS.
 
-## Liciense
+## License
 
 Copyright Mengjia Zhao 2020.
-Distributed under the terms of the [Apache 2.0 license](https://github.com/in-the-ocean/htmlcomparator/blob/master/README.md).
+Distributed under the terms of the [Apache 2.0 license](https://github.com/in-the-ocean/htmlcomparator/blob/master/LICENSE).
