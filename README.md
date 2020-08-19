@@ -39,3 +39,12 @@ extra tag <p> in the first html at (1, 36)
 -this is different
 ```
 The tuples ```(1, 36)```, ```(1, 25)```, and ```(1, 25)``` give the line number and the offset of the differences.
+
+## Limitations
+
+Currently doesn't support CSS.
+
+## Liciense
+
+Copyright Mengjia Zhao 2020.
+Distributed under the terms of the [Apache 2.0 license](https://github.com/in-the-ocean/htmlcomparator/blob/master/README.md).
